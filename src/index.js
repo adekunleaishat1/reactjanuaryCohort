@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home';
 import Landing from './Components/Landing';
+import Todo from './Components/Todo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Landing/>
+    <Todo/>
+    {/* <Landing/> */}
     {/* <App />
     <Home/> */}
   </React.StrictMode>
