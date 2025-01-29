@@ -10,6 +10,7 @@ import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import Notfound from './Components/Notfound';
 import Nabar from './Components/Nabar';
 import IncreaseCounter from './Components/IncreaseCounter';
+import Onetodo from './Components/Onetodo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,9 +20,11 @@ root.render(
     <Routes>
       <Route path='/' element={<App/>}/>
       <Route path='/todo' element={<Todo/>}/>
+      <Route path='/one/:id' element={<Onetodo/>}/>
       <Route path='*' element={<Notfound/>} />
       <Route path='/home' element={<Home/>}>
-       <Route path='/home/landing' element={<Landing/>}/>
+        <Route index element={<Landing/>}/>
+       <Route  path='/home/landing' element={<Landing/>}/>
        <Route path='/home/count' element={<IncreaseCounter/>}/>
       </Route>
     </Routes>
