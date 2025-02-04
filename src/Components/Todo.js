@@ -80,6 +80,11 @@ const Todo = () => {
        
      }
 
+
+     const updatecompleted = () =>{
+      setcompleted(!completed)
+     }
+
   return (
     <div>
         <input value={title} onChange={(e)=>settitle(e.target.value)} type="text" />
@@ -93,7 +98,7 @@ const Todo = () => {
            <h1>Content: {user.content}</h1>
            <button onClick={() => handleDelete(user.id)}> Delete </button>
             <button  data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => handleEdit(user.id)}>Edit</button>
-            <input value={completed} onChange={(e)=> setcompleted(!completed)} type="checkbox" name="" id="" />
+            <input value={completed} onChange={updatecompleted} type="checkbox" name="" id="" />
             <Link to={`/one/${user.id}`} >See more</Link>
 
          </div>

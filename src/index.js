@@ -11,6 +11,7 @@ import Notfound from './Components/Notfound';
 import Nabar from './Components/Nabar';
 import IncreaseCounter from './Components/IncreaseCounter';
 import Onetodo from './Components/Onetodo';
+import Http from './Components/Http';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
       <Route path='/' element={<App/>}/>
       <Route path='/todo' element={<Todo/>}/>
       <Route path='/one/:id' element={<Onetodo/>}/>
+      <Route path='/http' element={<Http/>}/>
       <Route path='*' element={<Notfound/>} />
       <Route path='/home' element={<Home/>}>
         <Route index element={<Landing/>}/>
