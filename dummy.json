@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "aee4",
+      "username": "Simplysekinat",
+      "email": "akinolasekinat123@gmail.com",
+      "password": "Sekinah12@"
+    },
+    {
+      "id": "ab05",
+      "username": "tolani",
+      "email": "tolani@gmail.com",
+      "password": "tholani123"
+    },
+    {
+      "id": "bfe2",
+      "username": "tolani",
+      "email": "tolani@gmail.com",
+      "password": "tholani123"
+    },
+    {
+      "id": "d026",
+      "username": "bolade",
+      "email": "bolade@gmail.com",
+      "password": "bolade12"
+    }
+  ]
+}

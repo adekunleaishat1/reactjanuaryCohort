@@ -12,10 +12,14 @@ import Nabar from './Components/Nabar';
 import IncreaseCounter from './Components/IncreaseCounter';
 import Onetodo from './Components/Onetodo';
 import Http from './Components/Http';
-
+import Music from './Components/Music';
+import Form from './Components/Form';
+import { Provider } from 'react-redux';
+import Store from './Components/Redux/Store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={Store}>
     <BrowserRouter>
     <Nabar/>
     <Routes>
@@ -23,6 +27,8 @@ root.render(
       <Route path='/todo' element={<Todo/>}/>
       <Route path='/one/:id' element={<Onetodo/>}/>
       <Route path='/http' element={<Http/>}/>
+      <Route path='/music' element={<Music/>}/>
+      <Route path='/formik' element={<Form/>}/>
       <Route path='*' element={<Notfound/>} />
       <Route path='/home' element={<Home/>}>
         <Route index element={<Landing/>}/>
@@ -31,6 +37,7 @@ root.render(
       </Route>
     </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
