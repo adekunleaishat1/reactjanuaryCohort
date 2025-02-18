@@ -31,7 +31,7 @@ root.render(
       <Route path='/formik' element={<Form/>}/>
       <Route path='*' element={<Notfound/>} />
       <Route path='/home' element={<Home/>}>
-        <Route index element={<Landing/>}/>
+       <Route index element={<Landing/>}/>
        <Route  path='/home/landing' element={<Landing/>}/>
        <Route path='/home/count' element={<IncreaseCounter/>}/>
       </Route>

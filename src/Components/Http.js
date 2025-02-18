@@ -1,25 +1,24 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import { IsFailed,IsFetching,IsSuccessful } from './Redux/Userslice'
+import { useDispatch,useSelector } from 'react-redux'
 const Http = () => {
-    const [data, setdata] = useState([])
-    const [loading, setloading] = useState(false)
-    const [error, seterror] = useState(null)
+    const dispatch = useDispatch()
+    const {isloading , user, error} = useSelector((state)=> state.userslice)
+
+    
     
     useEffect(() => {
-
         const fetchData = async () => {
             try {
-            setloading(true)
+            dispatch(IsFetching())
              const response =  await axios.get('https://jsonplaceholder.typicode.com/todos')
-             setdata(response.data)
-             setloading(false)
+            //  setdata(response.data)
+            dispatch(IsSuccessful(response.data))
             } catch (error) {
-                seterror(error)
+              dispatch(IsFailed(error.message))
                console.log(error);
-             setloading(false)
-                 
             }
         }
       fetchData()
@@ -38,8 +37,8 @@ const Http = () => {
     <div>
       <h1>API</h1>
       <div>
-        {loading ? <p>Loading...</p> :
-          data && data.map((item, index)=>(
+        {isloading ? <p>Loading...</p> :
+          user && user.map((item, index)=>(
                 <>
                 <div className='d-flex justify-content-between items-center' key={index}>
                     <h1>{item.userId}</h1>
